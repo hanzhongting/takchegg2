@@ -9,12 +9,12 @@ import telebot
 import secrets
 import uuid
 
-client = pymongo.MongoClient("mongodb+srv://aa:bb@cluster0.plhbz.mongodb.net/a?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://aa:bb@cluster0.w0cxy.mongodb.net/?retryWrites=true&w=majority")
 mydb= client["a"]
 
 mycol = mydb["save"]
 
-TOKEN = "5154094460:AAH3U2k496pWXTBmaoZCqOwOdt1RPF8GVGU"
+TOKEN = "5034898394:AAGLhzqYHtqAjXieppMmNslri09pdgWnDgs"
 
 
 
@@ -127,7 +127,7 @@ def mem():
                         mention = "[" + str(ch[0]['name']) + "](tg://user?id=" + (str(ch[0]['id'])) + ")"
                         #texty=mention +"\nsolved :\nLink : "+ch[0]['url']
                         chatidd=str(ch[0]['chatidusr'])
-                        s=send_msg( mention +"\n.it looks like your question has been deleted \nسؤالك تم حذفه من الموقع \n\nyour Link :\n"+ch[0]['cheggurl'],chatidd)
+                        s=send_msg( mention +"\n.it looks like your question has been deleted \nyour Link :\n"+ch[0]['cheggurl'],chatidd)
                         myquery = { "url": str(ch[0]['url']) }
                         dele=mycol.delete_one(myquery)
                         print(dele)
@@ -139,7 +139,7 @@ def mem():
                         chatidd=str(ch[0]['chatidusr'])
                         uuid=str(ch[0]['url'])
 
-                        s=send_msg( mention +"\nyour question Has Been solved on chegg \nمرحباً ..\nالف مبروك تم حل سؤالك\n\nyour Link :\n"+ch[0]['cheggurl']+"\n\n"+"",chatidd)
+                        s=send_msg( mention +"\nyour question Has Been solved on chegg \nnyour Link :\n"+ch[0]['cheggurl']+"\n\n"+"",chatidd)
                         myquery = { "url": str(ch[0]['url']) }
                         dele=mycol.delete_one(myquery)
                         print(dele)
@@ -148,7 +148,7 @@ def mem():
                         mention = "[" + str(ch[0]['name']) + "](tg://user?id=" + (str(ch[0]['id'])) + ")"
                         #texty=mention +"\nsolved :\nLink : "+ch[0]['url']
                         chatidd=str(ch[0]['chatidusr'])
-                        s=send_msg( mention +"\nHello..Your question needs more information to be resolved\nسؤالك يحتاج معلومات اكثر ليتم حله\nyour Link : "+ch[0]['cheggurl'],chatidd)
+                        s=send_msg( mention +"\nHello..Your question needs more information to be resolved\nyour Link : "+ch[0]['cheggurl'],chatidd)
                         myquery = { "url": str(ch[0]['url']) }
                         dele=mycol.delete_one(myquery)
                         print(dele)
